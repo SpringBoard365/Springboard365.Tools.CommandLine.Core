@@ -43,5 +43,11 @@
     <Compile Include="CommandLineProgramBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="NuGet\NuGet.exe" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NuGet\NuGetPush.bat" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

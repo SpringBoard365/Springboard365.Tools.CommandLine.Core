@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyTitle("Springboard365.Tools.CommandLine.Core")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("The core helper project to allow parameters to be passed in and verified on a console application.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Springboard365 Ltd")]
 [assembly: AssemblyProduct("Springboard365.Tools.CommandLine.Core")]
