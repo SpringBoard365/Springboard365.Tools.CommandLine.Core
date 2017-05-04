@@ -54,7 +54,7 @@
             }
         }
 
-        public abstract void Run();
+        public abstract void RunBase();
 
         public void ShowHelp()
         {
@@ -79,7 +79,7 @@
                     {
                         try
                         {
-                            Run();
+                            RunBase();
                             return;
                         }
                         catch (Exception exception)
