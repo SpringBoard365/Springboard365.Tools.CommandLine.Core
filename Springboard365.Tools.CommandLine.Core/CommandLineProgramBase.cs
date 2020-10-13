@@ -5,7 +5,6 @@
 
     public abstract class CommandLineProgramBase
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors", Justification = "Reviewed")]
         protected CommandLineProgramBase(CommandLineParameterBase commandLineParameterBase, string[] args)
         {
             CommandLineParameterBase = commandLineParameterBase;
