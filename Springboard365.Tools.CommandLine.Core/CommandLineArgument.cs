@@ -1,4 +1,4 @@
-namespace Springboard365.Tools.CommandLine.Core
+﻿namespace Springboard365.Tools.CommandLine.Core
 {
     using System;
     using System.Collections;
@@ -11,12 +11,11 @@ namespace Springboard365.Tools.CommandLine.Core
     internal sealed class CommandLineArgument
     {
         private readonly CommandLineArgumentAttribute argumentAttribute;
-        private readonly PropertyInfo argumentProperty;
 
         internal CommandLineArgument(PropertyInfo argumentProperty, CommandLineArgumentAttribute argumentAttribute)
         {
             this.argumentAttribute = argumentAttribute;
-            this.argumentProperty = argumentProperty;
+            ArgumentProperty = argumentProperty;
         }
 
         internal bool IsSet { get; private set; }
@@ -124,18 +123,12 @@ namespace Springboard365.Tools.CommandLine.Core
                 }
                 catch (IOException)
                 {
-                    return new int?();
+                    return default;
                 }
             }
         }
 
-        private PropertyInfo ArgumentProperty
-        {
-            get
-            {
-                return argumentProperty;
-            }
-        }
+        private PropertyInfo ArgumentProperty { get; }
 
         public override string ToString()
         {
@@ -226,14 +219,9 @@ namespace Springboard365.Tools.CommandLine.Core
 
         private string ToSwitchString(string value)
         {
-            const string Format = " {0}{1}{2}{3}";
-            var empty = ':'.ToString(CultureInfo.InvariantCulture);
-            if (IsFlag)
-            {
-                empty = string.Empty;
-            }
+            var delimiter = IsFlag ? string.Empty : ':'.ToString(CultureInfo.InvariantCulture);
 
-            return string.Format(CultureInfo.InvariantCulture, Format, (object)'/', (object)Name, (object)empty, (object)value);
+            return $" /{Name}{delimiter}{value}";
         }
 
         private void PopulateCollectionParameter(object argTarget, string argValue)

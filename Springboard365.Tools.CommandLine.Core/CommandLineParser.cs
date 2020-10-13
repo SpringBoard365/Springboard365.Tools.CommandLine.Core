@@ -1,4 +1,4 @@
-namespace Springboard365.Tools.CommandLine.Core
+﻿namespace Springboard365.Tools.CommandLine.Core
 {
     using System;
     using System.Collections.Generic;
@@ -9,40 +9,18 @@ namespace Springboard365.Tools.CommandLine.Core
 
     public sealed class CommandLineParser
     {
-        private readonly List<CommandLineArgument> arguments;
-        private readonly Dictionary<string, CommandLineArgument> argumentsMap;
-        private readonly CommandLineParameterBase argumentSource;
-
         public CommandLineParser(CommandLineParameterBase argumentSource)
         {
-            arguments = new List<CommandLineArgument>();
-            this.argumentSource = argumentSource;
-            argumentsMap = GetPropertyMap();
+            Arguments = new List<CommandLineArgument>();
+            ArgumentsSource = argumentSource;
+            ArgumentsMap = GetPropertyMap();
         }
 
-        private List<CommandLineArgument> Arguments
-        {
-            get
-            {
-                return arguments;
-            }
-        }
+        private List<CommandLineArgument> Arguments { get; }
 
-        private Dictionary<string, CommandLineArgument> ArgumentsMap
-        {
-            get
-            {
-                return argumentsMap;
-            }
-        }
+        private Dictionary<string, CommandLineArgument> ArgumentsMap { get; }
 
-        private CommandLineParameterBase ArgumentsSource
-        {
-            get
-            {
-                return argumentSource;
-            }
-        }
+        private CommandLineParameterBase ArgumentsSource { get; }
 
         public void ParseArguments(string[] args)
         {

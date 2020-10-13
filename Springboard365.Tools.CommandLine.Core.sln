@@ -1,9 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Springboard365.Tools.CommandLine.Core", "Springboard365.Tools.CommandLine.Core\Springboard365.Tools.CommandLine.Core.csproj", "{67567A13-CB46-4EF2-A2C0-3B1C038C159E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{219EA194-1B28-42FC-816A-8FAECBE272C2}"
+	ProjectSection(SolutionItems) = preProject
+		Build\NuGetPush.bat = Build\NuGetPush.bat
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +23,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {06804C2C-A2B7-4F55-B62D-5703D57B145A}
 	EndGlobalSection
 EndGlobal

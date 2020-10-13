@@ -1,4 +1,4 @@
-namespace Springboard365.Tools.CommandLine.Core
+﻿namespace Springboard365.Tools.CommandLine.Core
 {
     using System;
 

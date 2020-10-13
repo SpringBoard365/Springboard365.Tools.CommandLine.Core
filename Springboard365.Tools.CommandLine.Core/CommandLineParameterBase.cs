@@ -5,33 +5,18 @@
 
     public class CommandLineParameterBase
     {
-        private readonly CommandLineParser parser;
-        private readonly Dictionary<string, string> unknownParameters;
-
         public CommandLineParameterBase()
         {
-            parser = new CommandLineParser(this);
-            unknownParameters = new Dictionary<string, string>();
+            Parser = new CommandLineParser(this);
+            UnknownParameters = new Dictionary<string, string>();
         }
 
         [CommandLineArgument(ArgumentType.Optional | ArgumentType.Binary, "help", Description = "Show this usage message.", Shortcut = "?")]
         public bool ShowHelp { get; set; }
 
-        protected internal CommandLineParser Parser
-        {
-            get
-            {
-                return parser;
-            }
-        }
+        protected internal CommandLineParser Parser { get; }
 
-        protected internal Dictionary<string, string> UnknownParameters
-        {
-            get
-            {
-                return unknownParameters;
-            }
-        }
+        protected internal Dictionary<string, string> UnknownParameters { get; }
 
         public void LoadArguments(string[] args)
         {
@@ -55,7 +40,7 @@
 
         public void OnUnknownArgument(string argumentName, string argumentValue)
         {
-            unknownParameters[argumentName] = argumentValue;
+            UnknownParameters[argumentName] = argumentValue;
         }
 
         public void OnInvalidArgument(string argument)
