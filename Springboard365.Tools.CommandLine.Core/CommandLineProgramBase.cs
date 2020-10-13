@@ -5,22 +5,14 @@
 
     public abstract class CommandLineProgramBase
     {
-        private readonly CommandLineParameterBase commandLineParameterBase;
-
         protected CommandLineProgramBase(CommandLineParameterBase commandLineParameterBase, string[] args)
         {
-            this.commandLineParameterBase = commandLineParameterBase;
+            CommandLineParameterBase = commandLineParameterBase;
             CommandLineParameterBase.LoadArguments(args);
             VerifyThenRun();
         }
 
-        protected internal CommandLineParameterBase CommandLineParameterBase
-        {
-            get
-            {
-                return commandLineParameterBase;
-            }
-        }
+        protected internal CommandLineParameterBase CommandLineParameterBase { get; }
 
         private static string ApplicationName
         {
