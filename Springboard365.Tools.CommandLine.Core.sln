@@ -7,6 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandLine.Core", "src\Com
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{219EA194-1B28-42FC-816A-8FAECBE272C2}"
 	ProjectSection(SolutionItems) = preProject
+		.travis.yml = .travis.yml
 		src\CommandLine.Core.nuspec = src\CommandLine.Core.nuspec
 		Build\NuGetPush.bat = Build\NuGetPush.bat
 	EndProjectSection
