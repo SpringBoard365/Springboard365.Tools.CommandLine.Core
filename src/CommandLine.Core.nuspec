@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$id$</title>
+    <authors>$author$</authors>
+    <repository type="git" url="$repo$"/>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <copyright>Copyright $author$ 2020</copyright>
+    <tags>$tags$</tags>
+    <dependencies>
+      <group targetFramework=".NETFramework4.6.2" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin\$Configuration$\Springboard365.Tools.CommandLine.Core.dll" target="lib\net462\Springboard365.Tools.CommandLine.Core.dll" />
+  </files>
+</package>
