@@ -6,12 +6,14 @@
     {
         public static void Draw(string currentStageName, ProgressBarOptions progressBarOptions)
         {
+            const string Space = " ";
+
             var progress = progressBarOptions.Progress;
             var total = progressBarOptions.Total;
             var filledColour = progressBarOptions.FilledColour;
             var backgroundColour = progressBarOptions.BackgroundColor;
 
-            var dateTimeString = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss  ");
+            var dateTimeString = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss ");
             var positionStart = 0 + dateTimeString.Length;
             var positionEnd = 32 + dateTimeString.Length;
 
@@ -29,7 +31,7 @@
             {
                 Console.BackgroundColor = filledColour;
                 Console.CursorLeft = position++;
-                Console.Write(" ");
+                Console.Write(Space);
             }
 
             // Draw unfilled part
@@ -37,14 +39,31 @@
             {
                 Console.BackgroundColor = backgroundColour;
                 Console.CursorLeft = position++;
-                Console.Write(" ");
+                Console.Write(Space);
             }
 
             // Draw totals
             Console.CursorLeft = positionEnd + 3;
             Console.BackgroundColor = ConsoleColor.Black;
-            Console.Write(progress.ToString() + " of " + total.ToString() + "  -  "); // Blanks at the end remove any excess
+            var padding = GetPaddingSize(progress, total);
+            Console.Write($"{padding}{progress} of {total}  -  ");
             Console.WriteLine(currentStageName);
+        }
+
+        private static string GetPaddingSize(int progress, int total)
+        {
+            int totalLength = total.ToString().Length;
+            int progressLength = progress.ToString().Length;
+
+            var difference = totalLength - progressLength;
+
+            var padding = string.Empty;
+            for (int i = 0; i < difference; i++)
+            {
+                padding += " ";
+            }
+
+            return padding;
         }
     }
 }

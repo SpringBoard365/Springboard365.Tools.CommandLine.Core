@@ -7,7 +7,7 @@
         public static void LogMessage(string value)
         {
             var dateTimeString = DateTime.Now.ToString(ConsoleLoggerOptions.DateTimeFormat);
-            Console.WriteLine($"{dateTimeString} - {value}");
+            Console.WriteLine($"{dateTimeString} {value}");
         }
 
         public static void LogProgress(string value, ProgressBarOptions progressBarOptions)
