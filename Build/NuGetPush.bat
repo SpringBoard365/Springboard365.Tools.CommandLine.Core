@@ -1,5 +1,5 @@
 @echo off
-SET packageVersion=2.0.1
+SET packageVersion=2.0.2
 
 SET configuration=Release
 SET id=Springboard365.Tools.CommandLine.Core
