@@ -47,6 +47,10 @@
     <Compile Include="CommandLineParameterBase.cs" />
     <Compile Include="CommandLineParser.cs" />
     <Compile Include="CommandLineProgramBase.cs" />
+    <Compile Include="Logging\ConsoleLogger.cs" />
+    <Compile Include="Logging\ConsoleLoggerOptions.cs" />
+    <Compile Include="Logging\ProgressBar.cs" />
+    <Compile Include="Logging\ProgressBarOptions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
